@@ -32,7 +32,8 @@ describe("Sign up to Miro", () => {
         })
         cy.contains("Get started free today")
         cy.get('#name',{ timeout: 10000 }).should('be.visible').type(info.name)
-        cy.get('#email',{ timeout: 10000 }).should('be.visible').type(info.email)
+        cy.get('#email',{ timeout: 10000 }).should('be.visible').type(info.invalid_email)
+        cy.get('#password',{ timeout: 10000 }).should('be.visible').click()
         cy.contains('Enter a valid email address.')
     })
 
